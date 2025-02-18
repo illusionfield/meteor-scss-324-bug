@@ -7,10 +7,14 @@ Package.onUse(api => {
   api.versionsFrom(["3.1.2"]);
 
   const impliedPackages = [
-    "forkedseven:scss@5.0.0-alpha.1"
+    "illusionfield:scss"
   ];
   api.use(impliedPackages);
   api.addFiles([
     "client/style_test.scss",
   ], ["client"]);
+
+  api.addFiles('client/style_test_import.scss', 'client', { isImport: true });
+  api.addFiles('client/style_test_import_global.scss', 'client', { isImport: true });
+
 });

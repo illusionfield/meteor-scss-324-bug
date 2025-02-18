@@ -1,0 +1,7 @@
+{
+  "quietDeps": true,
+  "verbose": false,
+  "includePaths": [
+    "meteor:{testlocal:scss}/client"
+  ]
+}

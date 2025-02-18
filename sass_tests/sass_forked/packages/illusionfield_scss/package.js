@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'forkedseven:scss',
-  version: '5.0.0-alpha.1',
-  summary: 'Style with attitude. Sass and SCSS support for Meteor.js.',
-  git: 'https://github.com/Meteor-Community-Packages/meteor-scss.git',
+  name:    'illusionfield:scss',
+  version: '0.12.0',
+  summary: 'Dart Sass for Meteor.js',
+  git:     'https://github.com/illusionfield/meteor-dart-sass-development.git',
   documentation: 'README.md'
 });
 
@@ -10,12 +10,11 @@ Package.registerBuildPlugin({
   name: 'compileScssBatch',
   use: [
     'caching-compiler@1.2.2 || 2.0.0',
-    'ecmascript@0.16.7 || 0.16.10',
+    'ecmascript@0.16.2 || 0.16.10',
   ],
   sources: ['plugin/compile-scss.js'],
   npmDependencies: {
-    '@babel/runtime': '7.26.0',
-    'sass': '1.83.4'
+    'sass': '1.85.0'
   }
 });
 
@@ -29,7 +28,7 @@ Package.onTest(api => {
   api.use([
     'test-helpers', 'tinytest',
     'ecmascript',
-    'fourseven:scss'
+    'illusionfield:scss'
   ]);
 
   // Tests for .scss
@@ -47,8 +46,8 @@ Package.onTest(api => {
 
   api.addFiles('test/scss/top2.scss', 'client', { isImport: true });
 
-  // Test for includePaths (not implemented)
-  //api.addFiles(['test/include-paths/include-paths.scss', 'test/include-paths/modules/module/_module.scss']);
+  // Test for includePaths
+  api.addFiles(['test/include-paths/include-paths.scss', 'test/include-paths/modules/module/_module.scss']);
 
   api.mainModule('tests.js', 'client');
 });

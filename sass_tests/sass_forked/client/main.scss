@@ -1,3 +1,6 @@
+@use 'meteor:{testlocal:scss}/client/style_test_import' as *;
+@use 'style_test_import_global' as *;
+
 body {
   padding: 10px;
   font-family: sans-serif;
